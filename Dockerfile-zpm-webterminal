@@ -28,10 +28,10 @@ RUN iris start $ISC_PACKAGE_INSTANCENAME quietly && \
             " Do ##class(Security.Users).UnExpireUserPasswords(\"*\")\n" \
             " write \"Create web application ...\",!" \
             " set webProperties(\"NameSpace\") = \"USER\"" \
-            " set webName = \"/person\"" \
+            " set webName = \"/pet\"" \
             " set webProperties(\"Enabled\") = 1" \
             " set webProperties(\"AutheEnabled\") = 32" \
-            " set webProperties(\"DispatchClass\") = \"Sample.PersonREST\"" \
+            " set webProperties(\"DispatchClass\") = \"Disrupt.PetREST\"" \
             " set status = ##class(Security.Applications).Create(webName, .webProperties)" \
             " write:'status \$system.Status.DisplayError(status)" \
             " write \"Web application \"\"\"_webName_\"\"\" was created!\",!" \
