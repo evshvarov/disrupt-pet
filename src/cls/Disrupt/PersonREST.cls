@@ -44,6 +44,12 @@ ClassMethod GetPet(id As %Integer) As %Status
 
     Set pet = ##class(Disrupt.Pet).%OpenId(id)
 
+    If '$IsObject(pet) {
+        Write "Loading data..."
+        do ##class(Disrupt.Pet).LoadData()
+        Set pet = ##class(Disrupt.Pet).%OpenId(id)
+    }
+    
     If '$IsObject(pet) Quit ..Http404()
 
     set json={}
